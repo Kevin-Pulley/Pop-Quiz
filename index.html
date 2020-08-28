@@ -15,34 +15,44 @@
         <div id="nav">
             <div class="left">
                 <a>
-                    <h4>View Highscore(s)</h4>
+                    <h4 id=highScoreLink>View Highscore(s)</h4>
                 </a>
             </div>
             <div class="right">
-                <h4>Time: <span id="timeLeft">0</span></h4>
+                <h3>Time: <span id="timeLeft">0</span></h3>
             </div>
         </div>
     </nav>
-    
-
-        <div id="quizBody">
-            <h1>My Quiz!</h1>
-            <h3>Click To Play</h3>
-            <button id="startBtn">Start</button>
+    <form id="highForm" method="POST">
+        <div id="scoreScreen">
+            <p id="scorePrompt">Enter Your Name For Highscores!</p><br>
+            <ul id="scoreHolder"></ul>
+            <input type="text" placeholder="Enter Name" id="scoreEnter">
         </div>
-       
+    </form>
 
-        <div id="questions">
-            <p id="askQuestion"></p>
+    <div id="quizBody">
+        <h1>Parks and Rec Quiz!!</h1>
+        <h3>How well do you know Parks and Rec? Click Start to find out! <br><br>
+            <span id="beware">But beware!</span>If you miss a question, you'll lose 10 seconds!</h3>
+        <button id="startBtn">Start</button>
+    </div>
+
+
+    <div id="buttonDiv">
+        <p id="titleQuestion"></p>
+        <div id="buttons">
             <button id="button1"></button><br>
             <button id="button2"></button><br>
             <button id="button3"></button><br>
             <button id="button4"></button><br>
-
         </div>
+    </div>
 
 
-        <script type="text/javascript" src="script.js" charset="utf-8"></script>
+
+
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
 
 </body>
 
