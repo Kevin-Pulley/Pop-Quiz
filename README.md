@@ -1,62 +1,109 @@
-# Pop-Quiz
-week 4 homework
-# 04 Web APIs: Code Quiz
+# Kevin_Pulley
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+![Project Image](assets/ScreenshotQuiz.png)
 
-## User Story
+>  Take my Parks and Rec Quiz!!
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+---
 
+### Table of Contents
+
+- [Description](#description)
+- [How To Use](#how-to-use)
+- [References](#references)
+- [License](#license)
+- [Author Info](#author-info)
+
+---
 ## Acceptance Criteria
 
-```
 GIVEN I am taking a code quiz
 
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
-// add element(button) when clicked needs to start the start game function
-
 
 WHEN I answer a question
 THEN I am presented with another question
-// .addeventlistener to button, when clicked goes to next set of questions (array)
-
 
 WHEN I answer a question incorrectly
 THEN time is subtracted from the clock
-// example : playButton.addEventListener("click", startTimer); 
-// use 60 seconds, 
-// timeRemaining --; 1000ms
-// put all data in an object and recall from that??
-// Google which element was clicked in HTML
-
 
 WHEN all questions are answered or the timer reaches 0
 THEN the game is over
 
-
-
 WHEN the game is over
 THEN I can save my initials and score
-// localstorage with a form for name input and  (var) currentScore
-```
 
-The following animation demonstrates the application functionality:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+## Description
 
-### Review
+This is a Parks and Rec. Quiz!!
 
-You are required to submit the following for review:
+#### Technologies
 
-* The URL of the functional, deployed application.
+- HTML
+- CSS
+- JavaScript
+- Markdown
+- Visual Studio Code
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+[Back To The Top](#Kevin_Pulley)
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+---
+
+## How To Use
+- Visit  https://kevin-pulley.github.io/Pop-Quiz/
+
+#### Installation
+- Google Chrome or any Web Browser
+
+
+[Back To The Top](#Kevin_Pulley)
+
+---
+
+## References
+- http://www.youtube.com
+- http://www.github.com
+- http://www.w3schools.com
+- Vandy Coding Bootcamp
+
+
+[Back To The Top](#Kevin_Pulley)
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) [2020] [Kevin S Pulley]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[Back To The Top](#Kevin_Pulley)
+
+---
+
+## Author Info
+
+- Email - [skippy1025@gmail.com](skippy1025@gmail.com)
+- Github - [github.com/Kevin-Pulley]
+
+[Back To The Top](#Kevin_Pulley)

@@ -56,15 +56,9 @@ function start() {
     callQuestions();
 }
 
-
-
-//localStorage.clear()
-
 function timer() {
     timeLeft = 60;
     document.getElementById("timeLeft").innerHTML = timeLeft;
-
-
     timer = setInterval(function () {
         timeLeft--;
         document.getElementById("timeLeft").innerHTML = timeLeft;
@@ -77,106 +71,85 @@ function timer() {
 
 
 function callQuestions() {
-    titleQuestion.innerHTML = question[currentQuestion].title;
-    button1.innerHTML = question[currentQuestion].choices[0];
-    button2.innerHTML = question[currentQuestion].choices[1];
-    button3.innerHTML = question[currentQuestion].choices[2];
-    button4.innerHTML = question[currentQuestion].choices[3];
-    button1.setAttribute("style", "display: inline-block");
-    button2.setAttribute("style", "display: inline-block");
-    button3.setAttribute("style", "display: inline-block");
-    button4.setAttribute("style", "display: inline-block");
-    //console.log(callQuestions)
+    if (currentQuestion < question.length) {
+        titleQuestion.innerHTML = question[currentQuestion].title;
+        button1.innerHTML = question[currentQuestion].choices[0];
+        button2.innerHTML = question[currentQuestion].choices[1];
+        button3.innerHTML = question[currentQuestion].choices[2];
+        button4.innerHTML = question[currentQuestion].choices[3];
+        button1.setAttribute("style", "display: inline-block");
+        button2.setAttribute("style", "display: inline-block");
+        button3.setAttribute("style", "display: inline-block");
+        button4.setAttribute("style", "display: inline-block");
+    } else {
+        checkScore()
+    }
+
 }
 
-
 function nextQuestion() {
-    //console.log(this.textContent);
-    currentQuestion++
-    if (this.textContent === question[currentQuestion].answer) {
-        score += 70;
-    } else {
-        score -= 0;
-        timeLeft -= 10;
+    if (currentQuestion < question.length) {
+
+        if (this.textContent === question[currentQuestion].answer) {
+            score += 10;
+        } else {
+            timeLeft -= 10;
+        }
+        currentQuestion++
+        callQuestions();
     }
-    callQuestions();
-    //console.log(question[currentQuestion]);
-    console.log(score)
 };
 
 init();
 
 function setScore() {
-    // Clear todoList element and update todoCountSpan
     scoreHolder.innerHTML = "";
-
-
-    // Render a new li for each name
     for (var i = 0; i < scoreArray.length; i++) {
         var addScore = scoreArray[i];
-
         var li = document.createElement("li");
         li.textContent = addScore;
         li.setAttribute("data-index", i);
-
         scoreHolder.appendChild(li);
     }
 }
 
 function init() {
-    // Get stored  from localStorage
-    // Parsing the JSON string to an object
     var storedScores = JSON.parse(localStorage.getItem("scoreArray"));
-
-    // If scores were retrieved from localStorage, update the score array to it
     if (storedScores !== null) {
         scoreArray = storedScores;
     }
-
-    // Render scoreArray to the DOM
     setScore();
 }
 
 function storeScores() {
-        // Stringify and set "scoreArray" key in localStorage to score array
     localStorage.setItem("scoreArray", JSON.stringify(scoreArray));
     console.log(localStorage)
 }
 
-// When form is submitted...
-    highForm.addEventListener("submit", function (event) {
+highForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
     var scoreText = scoreEnter.value.trim();
-
-    // Return from function early if submitted scoreEnter is blank
     if (scoreText === "") {
         return;
     }
-
-    // Add new scoreEnter to scoreArray array, clear the input
-    scoreArray.push(scoreEnter);
+    scoreArray.push(scoreText + "-" + score);
     scoreEnter.value = "";
-
-    // Store updated scores in localStorage, re-render the list
     storeScores();
     setScore();
 });
-
-
 
 function checkScore() {
     scoreScreen.setAttribute("style", "display: inline-block, text-align: center")
     buttonDiv.setAttribute("style", "visibility: hidden")
     hideStart.setAttribute("style", "visibility: hidden")
+    clearInterval(timer);
 };
-
 
 function endGame() {
     clearInterval(timer);
-    alert("You've run out of time!!")
+    alert("You've run out of time!!");
+    checkScore()
 }
-
 
 startBtn.addEventListener("click", start);
 button1.addEventListener("click", nextQuestion);
@@ -184,4 +157,7 @@ button2.addEventListener("click", nextQuestion);
 button3.addEventListener("click", nextQuestion);
 button4.addEventListener("click", nextQuestion);
 highScoreLink.addEventListener("click", checkScore)
-//scoreEnter.addEventListener("enter", storeScores)
+
+
+
+
